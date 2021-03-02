@@ -1,0 +1,23 @@
+{
+    "name": "aoeng/laravel-support",
+    "description": "my laravel packages  necessities!",
+    "type": "library",
+    "require": {
+        "php": ">=7.4.0",
+        "laravel/framework": "^8.0.4"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Dang",
+            "email": "yofengge@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Aoeng\\Laravel\\Support\\": "src/"
+        }
+    },
+    "extra": {
+    }
+}
