@@ -19,5 +19,10 @@
         }
     },
     "extra": {
+        "laravel": {
+            "providers": [
+                "Aoeng\\Laravel\\Support\\SupportServiceProvider"
+            ]
+        }
     }
 }
