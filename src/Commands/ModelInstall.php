@@ -41,7 +41,6 @@ class ModelInstall extends Command
     /**
      * Execute the console command.
      *
-     * @return int
      */
     public function handle()
     {
@@ -56,7 +55,7 @@ class ModelInstall extends Command
 
         if (!empty($output)) {
             $this->line("{$ext} have installed!");
-            return false;
+            return;
         }
         $this->line("{$ext} installing!");
 
@@ -75,7 +74,7 @@ class ModelInstall extends Command
             $this->call('migrate');
         }
 
-        $this->call("admin:import {$model}");
+        $this->call("admin:import", $model);
 
         $this->line("{$ext} import successfully!");
     }
