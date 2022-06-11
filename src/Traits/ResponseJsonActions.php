@@ -4,7 +4,7 @@ namespace Aoeng\Laravel\Support\Traits;
 
 trait ResponseJsonActions
 {
-    public function responseJson($data = [], $message = 'Success', $code = 0)
+    public function responseJson($data = [], $message = null, $code = 0)
     {
         return response()->json([
             'code'    => $code,
@@ -13,13 +13,17 @@ trait ResponseJsonActions
         ]);
     }
 
-    public function success($message = 'Success', $data = [])
+    public function success($message = null, $data = [])
     {
-        return $this->responseJson($data, $message, 0);
+        $message || $message = __('Success');
+
+        return $this->responseJson($data, $message);
     }
 
-    public function error($message = 'Error', $code = 301, $data = [])
+    public function error($message = null, $code = 301, $data = [])
     {
+        $message || $message = __('Busy');
+
         return $this->responseJson($data, $message, $code);
     }
 }
